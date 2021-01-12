@@ -68,3 +68,15 @@ Docker is pretty sweet. You just started running the container in that last comm
 - Click Apply
 - You can resize the panel once on the dashboard
 
+# Stopping the Docker container
+
+You can stop the container without losing your work and turn it back on when you want to play with it again.
+
+```
+docker ps
+```
+Grab the container ID and then
+
+```
+docker stop <container_id>
+```
