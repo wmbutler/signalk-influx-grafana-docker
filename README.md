@@ -24,6 +24,8 @@ docker run -d -p 3000:3000 -p 3001:3001 -p 8086:8086 wmbutler/signalk-influx-gra
 What is this doing? It
 s running a container called `wmbutler/signalk-influx-grafana-docker` The `-p` statements are opening ports for the programs to communicate on. Notice how they correspond to the ports mentioned in the introduction.
 
+Docker is pretty sweet. You just started running the container in that last command. Now you can open a web browser to those services as described below.
+
 # SignalK Server Config
 
 [http://localhost:3000](http://localhost:3000) for SignalK
