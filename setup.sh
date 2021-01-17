@@ -34,3 +34,13 @@ apt-get -y install influxdb
 
 # Install signalk server
 npm install -g --unsafe-perm signalk-server
+
+# Download NOAA Tile Charts
+mkdir /root/.signalk/charts
+cd /root/.signalk/charts
+
+for region in {11..25}
+do
+    wget http://tileservice.charts.noaa.gov/mbtiles/50000_1/MBTILES_$region.mbtiles
+    wget http://tileservice.charts.noaa.gov/mbtiles/50000_1/MBTILES_$region-updates.mbtiles
+done

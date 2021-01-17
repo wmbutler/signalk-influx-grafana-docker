@@ -7,6 +7,14 @@ This is a relatively simple docker file that installs:
 
 I chose `3001` for Grafana because `3000` was already in use by the SignalK server.
 
+This docker also contains all the [North American NOAA charts](https://github.com/vokkim/noaa-nautical-charts) (sections 11-25). This is a requirement for anyone who will be offshore out of reach of mobile data. The addition of these tile layers increases the image size from 1.5GB to 7.5GB so it takes a bit longer to download, but now your charts are all stored locally.
+
+The purpose of this repo is to help anyone who is trying to put together a system concept before they move forward with the actual installation. I'm still trying to decide on the best 12v dc computer to use, but I believe this panel will work.
+
+After looking at the different dashboards available, I think that standardizing on Grafana for the display makes a lot of sense. There is even a developers toolkit for grafana that can be used to develop custom widgets as plugins. Most of the existing widget in grafana are already appropriate for various gauges with the exception of a visual gauge for wind and various points of sail.
+
+- [Xenarc 12.1"](https://www.bhphotovideo.com/c/product/1542413-REG/xenarc_1219gns_12_1_sunlight_readable_hdmi_sdi_video.html)
+
 # Prerequisites
 - Install [Docker](https://www.docker.com/get-started) on your system
 
