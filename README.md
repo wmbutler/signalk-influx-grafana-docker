@@ -26,7 +26,7 @@ docker pull wmbutler/signalk-influx-grafana
 # Run the image
 
 ```
-docker run -d -p 3000:3000 -p 3001:3001 -p 8086:8086 wmbutler/signalk-influx-grafana
+docker run -d -p 3000:3000 -p 3001:3001 -p 8086:8086 wmbutler/signalk-influx-grafana:1.3
 ```
 
 What is this doing? It
@@ -38,24 +38,17 @@ Docker is pretty sweet. You just started running the container in that last comm
 
 [http://localhost:3000](http://localhost:3000) for SignalK
 
-- Click on Appstore: Available
-- Download the signalk-to-influxdb plugin by clicking on the cloud icon on the right
-- You need to restart the docker container
-- From a command line, type `docker ps` copy the container id
-- From a command line, type `docker restart <container_id>`
-- Click on Server: Plugin Config
-- Expand InfluxDb Writer
-- Leave all values except change database to `boatdata` and batch to `0`
-- Click Submit at the bottom
-- Now SignalK is sending the sample data to the Influx Database!
+The SignalK server is already configured properly. The following tasks are pre-configured in the docker image:
 
+- Plugin `signalk-to-influx` is installed and configured.
+- Plugin `signalk-charts` is installed and configured.
 
 # Grafana Config
 
 [http://localhost:3001](http://localhost:3001) for Grafana
 
-- Login with admin / admin
-- Set a new password for yourself
+Add the InfluxDB datasource:
+
 - Click on the gear icon in the left side panel
 - Choose **Add data source**
 - Filter for InfluxDB and Select it
@@ -65,16 +58,13 @@ Docker is pretty sweet. You just started running the container in that last comm
 - Leave user and password blank
 - Set HTTP Method to `POST`
 - Click **Save & Test**
-- Click the plus sign under the magnifying glass in the left pane
-- Click the blue **Add new Panel** button
-- When the panel opens, choose the **Panel** tab on the right side
-- Scroll down to visualizations and choose the **Stat** Panel
-- Under the Query tab, change the `default` dropdown to `InfluxDB`
-- Now you can choose a stat to display where you see `FROM default` where is says *Select Measurement*, choose `environment.wind.speedApparent` or whatever else you'd like to see.
-- Set the refresh interval in the top of the screen to 5s
-- Click Save in the top right corner.
-- Click Apply
-- You can resize the panel once on the dashboard
+
+Import a sample dashboard:
+
+- Hover over plus sign under the magnifying glass in the left pane and choose Import.
+- Click the **Upload JSON File** button.
+- Choose the Boat.json file from this repo. It's a Graphene exported dashboard already properly set up to interact with SignalK and InfluxDB. Be sure to specify InfluxDB as the database when importing.
+
 
 # Stopping the Docker container
 

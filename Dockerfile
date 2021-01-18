@@ -10,6 +10,5 @@ EXPOSE 8086
 
 # Start
 RUN ./setup.sh
-COPY package.json /root/.signalk/package.json
-COPY signalk-to-influxdb.json /root/.signalk/plugin-config-data/signalk-to-influxdb.json
+COPY signalk-to-influxdb.json /root/signalk-server/plugin-config-data/signalk-to-influxdb.json
 CMD ./start.sh
