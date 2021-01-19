@@ -1,0 +1,13 @@
+apiVersion: 1
+
+datasources:
+  - name: InfluxDB
+    type: influxdb
+    access: proxy
+    database: boatdata
+    isDefault: true
+    user:
+    password:
+    url: http://localhost:8086
+    jsonData:
+      httpMode: POST
