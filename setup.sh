@@ -34,6 +34,7 @@ echo "deb https://repos.influxdata.com/ubuntu focal stable" | tee /etc/apt/sourc
 wget -q -O - https://repos.influxdata.com/influxdb.key | apt-key add -
 apt-get -y update
 apt-get -y install influxdb
+mkdir /var/lib/grafana/dashboards
 
 # Install signalk server
 mkdir /root

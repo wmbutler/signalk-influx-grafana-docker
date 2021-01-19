@@ -10,5 +10,8 @@ EXPOSE 8086
 
 # Start
 RUN ./setup.sh
-COPY signalk-to-influxdb.json /root/signalk-server/plugin-config-data/signalk-to-influxdb.json
+COPY config/grafana-boat.json /var/lib/grafana/dashboards/grafana-boat.json
+COPY config/grafana-datasource.yml /etc/grafana/provisioning/datasources/grafana-datasource.yml
+COPY config/grafana-dashboard.yml /etc/grafana/provisioning/dashboards/grafana-dashboard.yml
+COPY config/signalk-to-influxdb.json /root/signalk-server/plugin-config-data/signalk-to-influxdb.json
 CMD ./start.sh
