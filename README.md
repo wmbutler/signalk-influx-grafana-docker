@@ -7,7 +7,7 @@ This is a relatively simple docker file that installs:
 
 I chose `3001` for Grafana because `3000` was already in use by the SignalK server.
 
-This docker also contains some [North American NOAA charts](https://github.com/vokkim/noaa-nautical-charts) (sections 22-23). I just thought this woul dbe helpful for anyone wanting to see how the Tile charts work.
+This docker also contains some [North American NOAA charts](https://github.com/vokkim/noaa-nautical-charts) (sections 22-23). I just thought this would be helpful for anyone wanting to see how the Tile charts work.
 
 The purpose of this repo is to help anyone who is trying to put together a system concept before they move forward with the actual installation. I'm still trying to decide on the best 12v dc computer to use, but I believe this panel will work.
 

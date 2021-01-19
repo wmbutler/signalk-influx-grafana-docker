@@ -1,0 +1,6 @@
+webapp:
+  image: wmbutler/signalk-influx-grafana:latest
+  ports:
+    - "3000:3000"
+    - "3001:3001"
+    - "8086:8086"
